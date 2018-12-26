@@ -5,8 +5,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Message fragment"
-        android:textSize="30dp"
+        android:text="@string/f_a_q_fragment"
+        android:textSize="30sp"
         android:layout_centerInParent="true"/>
 
 </RelativeLayout>
