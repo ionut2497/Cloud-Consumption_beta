@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -18,11 +19,23 @@ public class ConsumptionFragment extends android.support.v4.app.Fragment {
     private ProgressBar progressBarText ;
     private TextView txtProgressData;
     private ProgressBar progressBarData;
+    private LinearLayout linearProgress;
+    private LinearLayout errorView;
     private int callStatus = 0;
     private int textStatus = 0;
     private int dataStatus = 0;
     private Handler handler = new Handler();
     private int result = 45;
+
+    private void showConsumptionView() {
+        linearProgress.setVisibility(View.INVISIBLE);
+        errorView.setVisibility(View.VISIBLE);
+    }
+
+    private void showErrorView() {
+        linearProgress.setVisibility(View.INVISIBLE);
+        errorView.setVisibility(View.VISIBLE);
+    }
 
     @Nullable
     @Override
@@ -35,6 +48,8 @@ public class ConsumptionFragment extends android.support.v4.app.Fragment {
         progressBarText =  view.findViewById(R.id.progressBarText);
         txtProgressData =  view.findViewById(R.id.txtProgressData);
         progressBarData =  view.findViewById(R.id.progressBarData);
+        linearProgress = view.findViewById(R.id.linearProgress);
+        errorView = view.findViewById(R.id.errorView);
 
         new Thread(new Runnable() {
             @Override
@@ -49,7 +64,7 @@ public class ConsumptionFragment extends android.support.v4.app.Fragment {
                         }
                     });
                     try {
-                        Thread.sleep(16);
+                        Thread.sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -70,7 +85,7 @@ public class ConsumptionFragment extends android.support.v4.app.Fragment {
                         }
                     });
                     try {
-                        Thread.sleep(16);
+                        Thread.sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -91,7 +106,7 @@ public class ConsumptionFragment extends android.support.v4.app.Fragment {
                         }
                     });
                     try {
-                        Thread.sleep(16);
+                        Thread.sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

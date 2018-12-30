@@ -2,13 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:background="@android:color/white">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="wrap_content"
     android:background="@android:color/white"
+    android:visibility="visible"
     android:gravity="center">
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
@@ -19,17 +20,19 @@
         android:layout_marginTop="0dp"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/background_cloud" />
-
     <android.support.v7.widget.CardView
         android:id="@+id/card"
         android:layout_width="250dp"
         android:layout_height="80dp"
         android:layout_alignTop="@+id/imageView"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="125dp"
         android:layout_centerHorizontal="true"
         app:cardBackgroundColor="@color/colorPrimary"
         app:cardCornerRadius="25dp"
-        app:cardMaxElevation="20dp">
+        app:cardMaxElevation="2dp"
+        android:elevation="8dp"
+        card_view:cardElevation="10dp"
+        card_view:cardPreventCornerOverlap="false">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -46,7 +49,6 @@
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -61,6 +63,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="260dp"
         android:orientation="horizontal"
+        android:visibility="visible"
         android:layout_centerHorizontal="true">
 
         <RelativeLayout
@@ -165,6 +168,39 @@
 
 
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/errorView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearProgress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-100dp"
+        android:orientation="horizontal"
+        android:visibility="invisible">
 
+        <TextView
+            android:id="@+id/txtError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Failed to fetch data from server"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/card"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible">
+        <ProgressBar
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/loading_data_progress"
+            />
+    </LinearLayout>
 </RelativeLayout>
 </ScrollView>
