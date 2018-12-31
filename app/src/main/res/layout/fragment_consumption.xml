@@ -63,7 +63,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="260dp"
         android:orientation="horizontal"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:layout_centerHorizontal="true">
 
         <RelativeLayout
@@ -195,7 +195,7 @@
         android:layout_below="@+id/card"
         android:layout_marginTop="100dp"
         android:layout_centerHorizontal="true"
-        android:visibility="invisible">
+        android:visibility="visible">
         <ProgressBar
             android:layout_width="60dp"
             android:layout_height="60dp"
