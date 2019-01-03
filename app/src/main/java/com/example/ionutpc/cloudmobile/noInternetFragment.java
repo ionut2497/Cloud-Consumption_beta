@@ -31,16 +31,13 @@ public class noInternetFragment extends  android.support.v4.app.Fragment {
 
         @Override
         protected String doInBackground(String... params) {
-             Boolean noInternet = true;
+            Boolean noInternet = true;
 
             while (noInternet) {
 
                 if (((splashActivity) getActivity()).checkInternet()) {
                     noInternet = false;
                     Log.d("onStartTestFrag", "test true");
-                    Intent homeIntent = new Intent(getActivity(), DashboardActivity.class);
-                    startActivity(homeIntent);
-                    getActivity().finish();
                     return noInternet.toString();
 
                 } else {

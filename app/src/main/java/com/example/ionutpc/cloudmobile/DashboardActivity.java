@@ -29,7 +29,7 @@ public class DashboardActivity extends AppCompatActivity  implements NavigationV
         toggle.syncState();
         //avoid recreate on rotate
         if(savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new ConsumptionFragment()).commit();
+            getFragmentManager().beginTransaction().replace(R.id.fragment_container,new ConsumptionFragment()).commit();
             nav.setCheckedItem(R.id.nav_dashboard);
         }
 
@@ -42,11 +42,11 @@ public class DashboardActivity extends AppCompatActivity  implements NavigationV
         switch (menuItem.getItemId()){
             case R.id.nav_dashboard:
                 Log.d("ionut test","getting in fragment");
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new ConsumptionFragment()).commit();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,new ConsumptionFragment()).commit();
 
                 break;
             case R.id.nav_faq:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FAQFragment()).commit();
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,new FAQFragment()).commit();
                 break;
         }
 

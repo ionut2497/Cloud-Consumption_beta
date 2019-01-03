@@ -4,14 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 
 public class splashActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIME_OUT = 1000;
+    private static int SPLASH_TIME_OUT = 2000;
     private boolean hasInternet = false;
 
     @Override
@@ -26,7 +26,6 @@ public class splashActivity extends AppCompatActivity {
     protected void onStart() {
         Log.d("onStartTest","onStart triggered "+ String.valueOf(hasInternet));
         super.onStart();
-        final Context context = getApplicationContext();
         final Handler handler = new Handler();
         final Handler checkInternetHandler = new Handler();
         checkInternetHandler.postDelayed(new Runnable() {
@@ -43,8 +42,6 @@ public class splashActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_splash,new noInternetFragment()).commit();
-
-
                         }
                     });
                 }
