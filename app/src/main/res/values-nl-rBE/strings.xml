@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cloud Verbruik</string>
+    <string name="f_a_q_fragment">F.A.Q. Fragment</string>
+    <string name="title_home">Startpagina</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notificaties</string>
+    <string name="navigation_drawer_open">Open navigatie menu</string>
+    <string name="navigation_drawer_close">Sluit navigatie menu</string>
+    <string name="consumption">Consumptie</string>
+    <string name="f_a_q">F.A.Q.</string>
+    <string name="your_consumption">Uw verbruik</string>
+    <string name="minutes">Minuten</string>
+    <string name="sms">SMS</string>
+    <string name="data">Data</string>
+    <string name="failed_to_fetch_data_from_server">Kon gegevens niet downloaden</string>
+    <string name="boiii_u_got_no_internet">Kerel gij hebt geen internet</string>
+    <string name="just_activate_internet_and_see_the_magic">"Gewoon internet activeren "</string>
+    <string name="welcome_ionut">Welkom Ionut</string>
+</resources>

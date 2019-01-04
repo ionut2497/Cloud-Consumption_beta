@@ -11,6 +11,7 @@
         android:gravity="center"
         android:visibility="visible">
         <ImageView
+            android:contentDescription="@string/app_name"
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="110dp"
@@ -43,7 +44,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:gravity="center"
-                    android:text="Welcome Ionut"
+                    android:text="@string/ionut_alazaroae"
+
                     android:textColor="#fff"
                     android:textSize="20sp" />
             </RelativeLayout>
@@ -55,7 +57,7 @@
             android:layout_below="@+id/card"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:text="Your consumption" />
+            android:text="@string/your_consumption" />
         <LinearLayout
             android:id="@+id/linearProgress"
             android:layout_width="wrap_content"
@@ -75,7 +77,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="Minutes"
+                    android:text="@string/minutes"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="16sp" />
 
@@ -109,7 +111,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="SMS"
+                    android:text="@string/sms"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="16sp" />
 
@@ -142,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="Data"
+                    android:text="@string/data"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="16sp" />
 
@@ -183,8 +185,7 @@
                 android:id="@+id/txtError"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="Failed to fetch data from server"
+                android:text="@string/failed_to_fetch_data_from_server"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="16sp" />
 

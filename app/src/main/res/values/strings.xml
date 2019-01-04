@@ -3,14 +3,22 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <string name="title_activity_mainscreen">mainscreenActivity</string>
     <string name="navigation_drawer_open">Open Navigation drawer</string>
     <string name="navigation_drawer_close">Close Navigation drawer</string>
     <string name="f_a_q_fragment">F.A.Q. fragment</string>
     <string name="consumption">Consumption</string>
     <string name="f_a_q">F.A.Q.</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="your_consumption">Your consumption</string>
+    <string name="minutes">Minutes</string>
+    <string name="sms">SMS</string>
+    <string name="data">Data</string>
+    <string name="failed_to_fetch_data_from_server">Failed to fetch data from server</string>
+    <string name="ionut_alazaroae" translatable="false">Ionut Alazaroae</string>
+    <string name="info_cloudgroup_be" translatable="false">info@cloudgroup.be</string>
+    <string name="logo" translatable="false">Logo</string>
+    <string name="dinosaur_no_internet" translatable="false">Dinosaur no internet</string>
+    <string name="boiii_u_got_no_internet">Boiii u got no Internet</string>
+    <string name="just_activate_internet_and_see_the_magic">Just activate internet and see the magic</string>
+    <string name="welcome_ionut">Welcome Ionut</string>
 </resources>

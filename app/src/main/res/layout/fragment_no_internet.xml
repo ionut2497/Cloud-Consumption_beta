@@ -13,11 +13,10 @@
         android:orientation="vertical">
 
         <ImageView
+            android:contentDescription="@string/dinosaur_no_internet"
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             android:layout_marginTop="0dp"
             android:scaleType="center"
             app:srcCompat="@drawable/dino" />
@@ -28,23 +27,23 @@
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
             android:gravity="center"
-            android:text="Boiii u got no Internet"
+            android:text="@string/boiii_u_got_no_internet"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/dinotext2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
             android:gravity="center"
-            android:text="Just activate internet and see the magic"
+            android:text="@string/just_activate_internet_and_see_the_magic"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp"
             android:textStyle="bold" />
 
     </LinearLayout>
-
 
 
 </FrameLayout>
