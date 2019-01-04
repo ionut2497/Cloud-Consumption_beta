@@ -17,4 +17,7 @@
     <string name="boiii_u_got_no_internet">Kerel gij hebt geen internet</string>
     <string name="just_activate_internet_and_see_the_magic">"Gewoon internet activeren "</string>
     <string name="welcome_ionut">Welkom Ionut</string>
+    <string name="title_activity_settings">Instellingen</string>
+    <string name="change_language">Taal veranderen</string>
+    <string name="lan_key">Taal</string>
 </resources>

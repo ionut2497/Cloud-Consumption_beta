@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Label ordering must match values -->
+    <array name="pref_lang_option_labels">
+        <item>English</item>
+        <item>Nederlands</item>
+    </array>
+
+    <array name="pref_lang_option_values">
+        <item>en</item>
+        <item>nl</item>
+    </array>
+</resources>

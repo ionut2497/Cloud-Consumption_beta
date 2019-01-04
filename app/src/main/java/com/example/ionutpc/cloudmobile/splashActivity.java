@@ -1,5 +1,6 @@
 package com.example.ionutpc.cloudmobile;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -11,7 +12,7 @@ import android.util.Log;
 
 public class splashActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIME_OUT = 2000;
+    private final static int SPLASH_TIME_OUT = 2000;
     private boolean hasInternet = false;
 
     @Override
