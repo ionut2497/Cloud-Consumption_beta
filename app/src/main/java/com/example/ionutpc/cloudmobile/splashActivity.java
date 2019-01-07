@@ -35,6 +35,7 @@ public class splashActivity extends AppCompatActivity {
                 hasInternet = checkInternet();
                 if(hasInternet){
                     Intent homeIntent = new Intent(splashActivity.this,DashboardActivity.class);
+                    homeIntent.putExtra("key","123456789");
                     startActivity(homeIntent);
                     finish();
                 }

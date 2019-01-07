@@ -47,6 +47,7 @@ public class ConsumptionFragment extends Fragment {
     private AppDatabase mDb;
     private int mConsumptionId = DEFAULT_CONSUMPTION_ID;
     private Activity myActivity;
+    private String key ;
 
 
     private void initViews(View view) {
@@ -65,6 +66,16 @@ public class ConsumptionFragment extends Fragment {
         outState.putInt(INSTANCE_CONSUMPTION_ID, mConsumptionId);
         super.onSaveInstanceState(outState);
     }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+            if (getArguments() != null) {
+                key = getArguments().getString("index","012345");
+                Log.d("Value oncreate index",key);
+            }
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState){
@@ -196,7 +207,7 @@ public class ConsumptionFragment extends Fragment {
         protected String doInBackground(String... params) {
 
 
-            URL consumption = NetworkUtils.buildUrl();
+            URL consumption = NetworkUtils.buildUrl(key);
             try {
                 String jsonResponse = NetworkUtils
                         .getResponseFromHttpUrl(consumption);

@@ -15,14 +15,13 @@ public final class NetworkUtils {
     private static final String TAG = NetworkUtils.class.getSimpleName();
 
     private static final String FINAL_URL = "https://5c294b25dc7d0a00144c2e83.mockapi.io/";
-    private static final String secret_key = "012345678";
     private static final String SECRET_PARAM = "key";
 
-    public static URL buildUrl(){
+    public static URL buildUrl(String key){
 
         Uri builtUri = Uri.parse(FINAL_URL).buildUpon()
                 .appendPath("getConsumptionData")
-                .appendQueryParameter(SECRET_PARAM,secret_key)
+                .appendQueryParameter(SECRET_PARAM,key)
                 .build();
 
         URL url = null;

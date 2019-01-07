@@ -13,7 +13,6 @@ import android.support.v7.preference.PreferenceManager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import java.util.Locale;
 
@@ -21,7 +20,7 @@ import java.util.Locale;
 public class DashboardActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener ,SharedPreferences.OnSharedPreferenceChangeListener{
 
     private  DrawerLayout drawer;
-    private TextView txt;
+    private Bundle key_args;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +36,16 @@ public class DashboardActivity extends AppCompatActivity  implements NavigationV
 
         setupSharedPreferences();
         toggle.syncState();
+        String key_from_intent = getIntent().getStringExtra("key");
+        Log.d("Value index intent",key_from_intent);
+        key_args = new Bundle();
+        key_args.putString("index",key_from_intent);
         //avoid recreate on rotate
         if(savedInstanceState == null){
-            getFragmentManager().beginTransaction().replace(R.id.fragment_container,new ConsumptionFragment()).commit();
+            android.app.FragmentManager fm = getFragmentManager();
+            ConsumptionFragment myFragment = new ConsumptionFragment();
+            myFragment.setArguments(key_args);
+            fm.beginTransaction().replace(R.id.fragment_container,myFragment).commit();
             nav.setCheckedItem(R.id.nav_dashboard);
         }
     }
@@ -50,8 +56,10 @@ public class DashboardActivity extends AppCompatActivity  implements NavigationV
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()){
             case R.id.nav_dashboard:
-                Log.d("ionut test","getting in fragment");
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container,new ConsumptionFragment()).commit();
+                android.app.FragmentManager fm = getFragmentManager();
+                ConsumptionFragment myFragment = new ConsumptionFragment();
+                myFragment.setArguments(key_args);
+                fm.beginTransaction().replace(R.id.fragment_container,myFragment).commit();
 
                 break;
             case R.id.nav_faq:
