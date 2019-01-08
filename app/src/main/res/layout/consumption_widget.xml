@@ -135,7 +135,18 @@
         android:gravity="center"
         android:text="@string/check_internet_connection"/>
 
-
+    <ImageButton
+        android:id="@+id/imageButtonSync"
+        android:layout_width="51dp"
+        android:layout_height="42dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="17dp"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_toRightOf="@id/imageView"
+        android:background="@android:color/transparent"
+       />
 
 
 </RelativeLayout>

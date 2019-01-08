@@ -1,11 +1,14 @@
 package com.example.ionutpc.cloudmobile;
 
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.view.View;
 import android.widget.RemoteViews;
+import android.widget.Toast;
 
 import com.example.ionutpc.cloudmobile.utilities.NetworkUtils;
 import com.google.gson.Gson;
@@ -16,13 +19,19 @@ import java.net.URL;
  * Implementation of App Widget functionality.
  */
 public class ConsumptionWidget extends AppWidgetProvider {
-    private static final int DEFAULT_CONSUMPTION_ID = -1;
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.consumption_widget);
+        views.setImageViewResource(R.id.imageButtonSync,R.drawable.ic_refresh_black_24dp);
+        Intent intentSync = new Intent(context, ConsumptionWidget.class);
+        intentSync.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+        intentSync.putExtra( AppWidgetManager.EXTRA_APPWIDGET_IDS, new int[] { appWidgetId } );
+        PendingIntent pendingSync = PendingIntent.getBroadcast(context,0, intentSync, PendingIntent.FLAG_UPDATE_CURRENT);
+        views.setOnClickPendingIntent(R.id.imageButtonSync,pendingSync);
+        Toast.makeText(context, "Consumption Updated", Toast.LENGTH_LONG).show();
         new FetchConsumptionTask(views,appWidgetId, appWidgetManager).execute();
         appWidgetManager.updateAppWidget(appWidgetId, views);
 
@@ -36,6 +45,8 @@ public class ConsumptionWidget extends AppWidgetProvider {
         }
 
     }
+
+
 
     @Override
     public void onEnabled(Context context) {
@@ -63,6 +74,7 @@ public class ConsumptionWidget extends AppWidgetProvider {
 
         }
 
+
         @Override
         protected String doInBackground(String... params) {
 
@@ -78,6 +90,7 @@ public class ConsumptionWidget extends AppWidgetProvider {
             }
         }
 
+
         @Override
         protected void onPostExecute(String jsonResponse) {
             if (jsonResponse != null) {
@@ -92,7 +105,7 @@ public class ConsumptionWidget extends AppWidgetProvider {
                 views.setProgressBar(R.id.progressBarData ,100,(int)progressdata,false);
                 views.setProgressBar(R.id.progressBarText ,100,(int)progresstext,false);
                 views.setTextViewText(R.id.txtProgressCall, String.valueOf(Math.round(c.getMinutes()) + "/"+Math.round(c.getMinutesmax())));
-                views.setTextViewText(R.id.txtProgressData, String.valueOf(Math.round(c.getData()) + "/"+Math.round(c.getMaxdata())+" GB"));
+                views.setTextViewText(R.id.txtProgressData, String.valueOf(c.getData() + "/"+Math.round(c.getMaxdata())+" GB"));
                 views.setTextViewText(R.id.txtProgressText, String.valueOf(Math.round(c.getSms()) + "/"+Math.round(c.getSmsmax())));
                 WidgetManager.updateAppWidget(WidgetID, views);
             } else {
