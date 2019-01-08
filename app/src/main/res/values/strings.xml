@@ -24,6 +24,7 @@
     <string name="title_activity_settings">Settings</string>
     <string name="change_language">Change language</string>
     <string name="lan_key">Language</string>
+    <string name="check_internet_connection">Check internet connection</string>
 
 
 </resources>
