@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Cloud Verbruik</string>
-    <string name="f_a_q_fragment">F.A.Q. Fragment</string>
+    <string name="f_a_q_fragment">Binnekort</string>
     <string name="title_home">Startpagina</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notificaties</string>
@@ -9,6 +9,7 @@
     <string name="navigation_drawer_close">Sluit navigatie menu</string>
     <string name="consumption">Consumptie</string>
     <string name="f_a_q">F.A.Q.</string>
+
     <string name="your_consumption">Uw verbruik</string>
     <string name="minutes">Minuten</string>
     <string name="sms">SMS</string>
