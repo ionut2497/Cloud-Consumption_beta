@@ -2,14 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_dark">
-
-    <TextView
-        android:layout_width="wrap_content"
+    android:background="@android:color/white">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_height="wrap_content"
-        android:text="@string/f_a_q_fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true" />
+        android:layout_width="match_parent"
+        android:visibility="visible">
 
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

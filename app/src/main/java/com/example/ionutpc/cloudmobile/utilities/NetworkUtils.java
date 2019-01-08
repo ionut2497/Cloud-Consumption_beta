@@ -17,10 +17,10 @@ public final class NetworkUtils {
     private static final String FINAL_URL = "https://5c294b25dc7d0a00144c2e83.mockapi.io/";
     private static final String SECRET_PARAM = "key";
 
-    public static URL buildUrl(String key){
+    public static URL buildUrl(String key,String path){
 
         Uri builtUri = Uri.parse(FINAL_URL).buildUpon()
-                .appendPath("getConsumptionData")
+                .appendPath(path)
                 .appendQueryParameter(SECRET_PARAM,key)
                 .build();
 

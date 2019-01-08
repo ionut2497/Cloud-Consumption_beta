@@ -2,8 +2,6 @@ package com.example.ionutpc.cloudmobile;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Fragment;
-import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.Observer;
 import android.os.AsyncTask;
@@ -11,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -129,7 +128,7 @@ public class ConsumptionFragment extends Fragment {
 
         if (noInternet) {
             final LiveData<ConsumptionEntry> consumption = mDb.consumptionDao().loadAllConsumptionsLastLive();
-            consumption.observe((LifecycleOwner)this, new Observer<ConsumptionEntry>() {
+            consumption.observe(this, new Observer<ConsumptionEntry>() {
                 @Override
                 public void onChanged(@Nullable ConsumptionEntry consumptionEntry) {
                     consumption.removeObserver(this);
@@ -207,7 +206,7 @@ public class ConsumptionFragment extends Fragment {
         protected String doInBackground(String... params) {
 
 
-            URL consumption = NetworkUtils.buildUrl(key);
+            URL consumption = NetworkUtils.buildUrl(key,"getConsumptionData");
             try {
                 String jsonResponse = NetworkUtils
                         .getResponseFromHttpUrl(consumption);

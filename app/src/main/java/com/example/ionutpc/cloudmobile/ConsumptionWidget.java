@@ -79,7 +79,7 @@ public class ConsumptionWidget extends AppWidgetProvider {
         protected String doInBackground(String... params) {
 
 
-            URL consumption = NetworkUtils.buildUrl("12345");
+            URL consumption = NetworkUtils.buildUrl("12345","getConsumptionData");
             try {
                 String jsonResponse = NetworkUtils
                         .getResponseFromHttpUrl(consumption);

@@ -42,7 +42,7 @@ public class DashboardActivity extends AppCompatActivity  implements NavigationV
         key_args.putString("index",key_from_intent);
         //avoid recreate on rotate
         if(savedInstanceState == null){
-            android.app.FragmentManager fm = getFragmentManager();
+            android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
             ConsumptionFragment myFragment = new ConsumptionFragment();
             myFragment.setArguments(key_args);
             fm.beginTransaction().replace(R.id.fragment_container,myFragment).commit();
@@ -54,19 +54,21 @@ public class DashboardActivity extends AppCompatActivity  implements NavigationV
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
         switch (menuItem.getItemId()){
             case R.id.nav_dashboard:
-                android.app.FragmentManager fm = getFragmentManager();
                 ConsumptionFragment myFragment = new ConsumptionFragment();
                 myFragment.setArguments(key_args);
                 fm.beginTransaction().replace(R.id.fragment_container,myFragment).commit();
 
                 break;
             case R.id.nav_faq:
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container,new FAQFragment()).commit();
+                FAQFragment faqFragment = new FAQFragment();
+                faqFragment.setArguments(key_args);
+                fm.beginTransaction().replace(R.id.fragment_container,faqFragment).commit();
                 break;
             case R.id.nav_settings:
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container,new SettingsFragment()).commit();
+                fm.beginTransaction().replace(R.id.fragment_container,new SettingsFragment()).commit();
                 break;
         }
 
